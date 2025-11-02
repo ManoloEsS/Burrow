@@ -1,7 +1,13 @@
 package config
 
-import "database/sql"
+import (
+	"database/sql"
+	"net/http"
+	"time"
+)
 
 type ClientConfig struct {
-	Db *sql.DB
+	Db            *sql.DB
+	GlobalTimeout time.Duration
+	Client        *http.Client
 }
